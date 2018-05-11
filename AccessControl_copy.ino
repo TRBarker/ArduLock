@@ -93,15 +93,15 @@ void loop()
     digitalWrite(redLed, LED_ON);
     digitalWrite(greenLed, LED_OFF);  // Make sure green LED is off
     digitalWrite(BUZZER_PIN, HIGH);
-    delay(400);
+    delay(200);
     digitalWrite(BUZZER_PIN, LOW);
-    delay(400);
+    delay(200);
     digitalWrite(BUZZER_PIN, HIGH);
-    delay(400);
+    delay(200);
     digitalWrite(BUZZER_PIN, LOW);
-    delay(400);
+    delay(200);
     digitalWrite(BUZZER_PIN, HIGH);
-    delay(400);
+    delay(200);
     digitalWrite(BUZZER_PIN, LOW);
   }
   }
@@ -173,14 +173,7 @@ void masterCard(){
 void loopRed(){
      digitalWrite(redLed, LED_ON);
     digitalWrite(greenLed, LED_OFF);
-    delay(200);
-    digitalWrite(redLed, LED_OFF);
-    delay(200);
-    digitalWrite(redLed, LED_ON);
-    delay(200);
-    digitalWrite(redLed, LED_OFF);
-    delay(200);
-    digitalWrite(redLed, LED_ON);
+    digitalWrite(yellowLed, LED_OFF);
     delay(200);
     digitalWrite(redLed, LED_OFF);
 }
