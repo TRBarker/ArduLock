@@ -1,6 +1,8 @@
 
 #include <SPI.h>
 #include <MFRC522.h>
+#include <LiquidCrystal_I2C.h> //Need to double check this is correctly included.
+#include <Keypad.h> //Need to double check this is correctly included.
  
 #define SS_PIN 10
 #define RST_PIN 9
@@ -14,7 +16,7 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 
 constexpr uint8_t redLed = 7;   // Set Led Pins
 constexpr uint8_t greenLed = 6;
-constexpr uint8_t yellowLed = 4;
+constexpr uint8_t blueLed = 4;
 
 extern String authCard = "";
 extern String lockState = "locked";
@@ -23,7 +25,7 @@ void setup()
 {
   pinMode(redLed, OUTPUT);
   pinMode(greenLed, OUTPUT);
-  pinMode(yellowLed, OUTPUT);
+  pinMode(blueLed, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
   pinMode(MOTOR_PIN, OUTPUT);
   
@@ -40,7 +42,7 @@ void loop()
   
   digitalWrite(redLed, LED_OFF);  // Make sure red LED is off
   digitalWrite(greenLed, LED_OFF);  // Make sure green LED is off
-  digitalWrite(yellowLed, LED_OFF);  // Make sure yellow LED is off
+  digitalWrite(blueLed, LED_OFF);  // Make sure yellow LED is off
   
   flashYellow();
   
@@ -173,7 +175,7 @@ void masterCard(){
 void loopRed(){
      digitalWrite(redLed, LED_ON);
     digitalWrite(greenLed, LED_OFF);
-    digitalWrite(yellowLed, LED_OFF);
+    digitalWrite(blueLed, LED_OFF);
     delay(200);
     digitalWrite(redLed, LED_OFF);
 }
@@ -188,8 +190,8 @@ void cycleLeds() {
 }
 
 void flashYellow(){ //Low-power systems self-check to display whether power is running and the system is on
-    digitalWrite(yellowLed, LED_ON);
+    digitalWrite(blueLed, LED_ON);
     delay(150);
-    digitalWrite(yellowLed, LED_OFF);
+    digitalWrite(blueLed, LED_OFF);
     delay(1500);
 }
