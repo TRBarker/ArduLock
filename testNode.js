@@ -1,6 +1,5 @@
-var http = require('http');
+const leftPad = require('left-pad');         // Require left pad
+const output = leftPad('Hello, World!', 15); // Define output
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello World!');
-}).listen(8080);
+// Send output to the console
+console.log(output);

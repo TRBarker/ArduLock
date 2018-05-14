@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/css/index.css')
+    title ArduLock
+  body
+    .header
+      h1.page-title ArduLock v 0.1
+
+    ul.nav
+      li: a(href='#UserGuide') User Guide
+      li: a(href='#Admin') Admin Access
+      li: a(href='#/') Back to main screen. 
+
+    
+    .main-content
+      block content
+
+    .footer
+      p This program is currently under development and is not yet functional. Any operational components are prototypes and should not be considered a reliable demonstration of the final product.
